@@ -5,11 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:local="clr-namespace:EduCenter" 
         mc:Ignorable="d" 
-        Title="Kurs" Height="450" Width="800" Background="#00ffc5">
+        Title="Kurs" ResizeMode="NoResize" Height="450" Width="800" Background="#bdff71" FontFamily="Comfortaa" >
     <Grid>
-        <Button Click="Button_Click" BorderBrush="Black" Background="#002217" Foreground="White" Content=" Мои записи" HorizontalAlignment="Center" VerticalAlignment="Top" Height="38" Width="148" FontSize="16" Margin="0,247,0,0"/>
-        <Button Click="Button_Click_1" BorderBrush="Black" Background="#002217" Foreground="White" Content="Курсы" HorizontalAlignment="Center" VerticalAlignment="Top" Height="38" Width="148" FontSize="16" Margin="0,147,0,0"/>
-        <Button Click="Button_Click_2" BorderBrush="Black" Background="#002217" Foreground="White" Content="Выход" HorizontalAlignment="Left" VerticalAlignment="Top" Height="38" Width="106" FontSize="16" Margin="684,386,0,0"/>
-        <Label x:Name="UserNameLabel" HorizontalAlignment="Left" Margin="43,27,0,0" VerticalAlignment="Top" Width="357" FontSize="18" Height="30" Content="ФИО" HorizontalContentAlignment="Center"/>
+        <Button Click="Button_Click_2" BorderBrush="Black" Background="#002217" Foreground="White" Content="Выход" HorizontalAlignment="Center" VerticalAlignment="Top" Height="62" Width="228" FontSize="24" Margin="0,324,0,0"/>
+        <Label x:Name="UserNameLabel" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Width="356" FontSize="36" Height="62" Content="ФИО" HorizontalContentAlignment="Center"/>
     </Grid>
 </Window>

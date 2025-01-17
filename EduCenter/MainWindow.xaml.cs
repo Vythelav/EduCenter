@@ -21,7 +21,7 @@ namespace EduCenter
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string connectionString = "Server=LAPTOP-V0AGQKUF\\SLAUUUIK;Database=EduCenter;Trusted_Connection=True;";
+        private string connectionString = "Server=510EC15;Database=EduCenter;Trusted_Connection=True;";
 
         public MainWindow()
         {

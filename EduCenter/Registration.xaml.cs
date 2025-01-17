@@ -20,7 +20,7 @@ namespace EduCenter
     /// </summary>
     public partial class Registration : Window
     {
-        private string connectionString = "Server=LAPTOP-V0AGQKUF\\SLAUUUIK;Database=EduCenter;Trusted_Connection=True;";
+        private string connectionString = "Server=510EC15;Database=EduCenter;Trusted_Connection=True;";
 
         public Registration()
         {
@@ -33,14 +33,14 @@ namespace EduCenter
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO Users (FullName, Username, Password, Gender, DateOfBirth) VALUES (@FullName, @Username, @Password, @Gender, @DateOfBirth)";
+                    string query = "INSERT INTO Users (FullName, Username, Password, Post, IsBlocked) VALUES (@FullName, @Username, @Password, @Post, @IsBlocked)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@FullName", user.FullName);
                         command.Parameters.AddWithValue("@Username", user.Username);
                         command.Parameters.AddWithValue("@Password", user.Password);
-                        command.Parameters.AddWithValue("@Gender", user.Gender);
-                        command.Parameters.AddWithValue("@DateOfBirth", user.DateOfBirth);
+                        command.Parameters.AddWithValue("@Post", user.Post.Replace("System.Windows.Controls.ComboBoxItem:", ""));
+                        command.Parameters.AddWithValue("@IsBlocked", 1);
 
                         int result = command.ExecuteNonQuery();
                         return result > 0; 
@@ -57,17 +57,15 @@ namespace EduCenter
         {
             string fullName = FullNameTextBox.Text; 
             string login = LoginTextBox.Text; 
-            string password = PasswordBox.Password; 
-            string gender = GenderComboBox.SelectedItem.ToString(); 
-            DateTime dateOfBirth = DatePicker.SelectedDate ?? DateTime.Now; 
+            string password = PasswordBox.Text; 
+            string post = GenderComboBox.SelectedItem.ToString(); 
 
             User newUser = new User
             {
                 FullName = fullName,
                 Username = login,
                 Password = password,
-                Gender = gender,
-                DateOfBirth = dateOfBirth
+                Post = post,
             };
 
             if (RegisterUser(newUser))
@@ -83,6 +81,30 @@ namespace EduCenter
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<char> characters = new List<char>();
+            characters.AddRange("abcdefghijklmnopqrstuvwxyz".ToCharArray());
+            characters.AddRange("ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray());
+            characters.AddRange("0123456789".ToCharArray());
+            characters.AddRange("!\"No ; % :?".ToCharArray());
 
+           
+            Random random = new Random();
+            int length = random.Next(12, 17);
+
+           
+            string password = "";
+            for (int i = 0; i < length; i++)
+            {
+                
+                int index = random.Next(characters.Count);
+                password += characters[index];
+            }
+
+
+            PasswordBox.Text = password;
+        }
     }
-}
+    }
+

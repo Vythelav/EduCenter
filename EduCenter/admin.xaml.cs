@@ -13,7 +13,7 @@ namespace EduCenter
     public partial class admin : Window
     {
         private List<User> users;
-        private string connectionString = "Server=LAPTOP-V0AGQKUF\\SLAUUUIK;Database=EduCenter;Trusted_Connection=True;";
+        private string connectionString = "Server=510EC15;Database=EduCenter;Trusted_Connection=True;";
 
         public admin()
         {

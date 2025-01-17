@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EduCenter"
         mc:Ignorable="d"
-        Title="admin" Height="450" Width="800" Background="#00ffc5">
+        Title="admin" Height="450" Width="800" Background="#679FD2" FontFamily="Comfortaa">
     <Grid>
-        <ListBox x:Name="UsersListBox" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="547" Margin="104,88,0,0"/>
-        <Button x:Name="BlockButton" Content="Заблокировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Click="BlockButton_Click"/>
-        <Button x:Name="UnblockButton" Content="Разблокировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Click="UnblockButton_Click" Margin="0,151,0,0"/>
+        <ListBox x:Name="UsersListBox" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="547" Margin="161,95,0,0"/>
+        <Button BorderBrush="Black" Background="#002217" Foreground="White" x:Name="BlockButton" Content="Заблокировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Height="49" Click="BlockButton_Click" Margin="0,268,0,0" FontSize="14"/>
+        <Button BorderBrush="Black" Background="#002217" Foreground="White" x:Name="UnblockButton" Content="Разблокировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Height="53" Click="UnblockButton_Click" Margin="0,151,0,0" FontSize="14"/>
     </Grid>
 </Window>

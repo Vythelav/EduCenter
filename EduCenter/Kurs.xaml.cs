@@ -36,19 +36,6 @@ namespace EduCenter
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MyCurses myCurses = new MyCurses(currentUserId);
-            myCurses.Show();
-            Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            MenuCurses menuCurses = new MenuCurses();
-            menuCurses.Show();
-            Close();
-        }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
